@@ -96,22 +96,7 @@ background-color:rgb(240,240,240);
   <option>Stage 3</option>  
   <option>Stage 4</option>
   <option>Stage 5</option>
-  <option>Stage 6</option>
-  <option>Stage 7</option>
-  <option>Stage 8</option>
-  <option>Stage 9</option>
-  <option>Stage 10</option>
-  <option>Stage 11</option>
-   <option>Stage 12</option>
-    <option>Stage 13</option>
-	<option>Stage 14</option>
-	<option>Stage 15</option>
-	<option>Stage 16</option>
-	<option>Stage 17</option>
-	<option>Stage 18</option>
-	<option>Stage 19</option>
-	<option>Stage 20</option>
-	<option>Stage 21</option>
+ 
 </select>
 
 </form>
@@ -154,7 +139,7 @@ var riderS=myListR.options[myListR.selectedIndex].text;
 
 
 	//Data for starting overall standings
-		d3.csv("Data/2013TDFALL.csv", function(error, data) {;
+		d3.csv("Data/2014TDFALL.csv", function(error, data) {;
 		data.forEach(function(d) {
     d.Position = +d.Position1;
     d.SecBack = +d.SecBack1;
