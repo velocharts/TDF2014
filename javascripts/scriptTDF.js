@@ -20,64 +20,19 @@ var dropdown = document.getElementById("myListR");
 for (var i = 0; i < riderlist.length; ++i) { dropdown[dropdown.length] = new Option(riderlist[i], riderlist[i]);};
 var riderS=myListR.options[myListR.selectedIndex].text;
 
-console.table(data2014);
-
+//console.table(data2014);
 
 
 	//Data for starting overall standings
 	
-		data.forEach(function(d) {
-    d.Position = +d.Position1;
-    d.SecBack = +d.SecBack1;
-	d.Position2 = +d.Position2;
-    d.SecBack2 = +d.SecBack2;
-	d.Position3 = +d.Position3;
-    d.SecBack3 = +d.SecBack3;
-	d.Position5 = +d.Position5;
-    d.SecBack5 = +d.SecBack5;
-	d.Position5 = +d.Position5;
-    d.SecBack5 = +d.SecBack5;
-	d.Position6 = +d.Position6;
-    d.SecBack6 = +d.SecBack6;
-	d.Position7 = +d.Position7;
-    d.SecBack7 = +d.SecBack7;
-	d.Position8 = +d.Position8;
-    d.SecBack8 = +d.SecBack8;
-	d.Position9 = +d.Position9;
-    d.SecBack9 = +d.SecBack9;
-	d.Position10 = +d.Position10;
-    d.SecBack10 = +d.SecBack10;
-	d.Position11 = +d.Position11;
-    d.SecBack11 = +d.SecBack11;
-	d.Position12 = +d.Position12;
-    d.SecBack12 = +d.SecBack12;
-	d.Position13 = +d.Position13;
-   d.SecBack13 = +d.SecBack13;
-   	d.Position14 = +d.Position14;
-   d.SecBack14 = +d.SecBack14;
-   	d.Position15 = +d.Position15;
-   d.SecBack15 = +d.SecBack15;
-   d.Position16 = +d.Position16;
-   d.SecBack16 = +d.SecBack16;
-    d.Position17 = +d.Position17;
-   d.SecBack17 = +d.SecBack17;
-       d.Position18 = +d.Position18;
-   d.SecBack18 = +d.SecBack18;
-     d.Position19 = +d.Position19;
-   d.SecBack19 = +d.SecBack19;
-       d.Position20 = +d.Position20;
-   d.SecBack20 = +d.SecBack20;
-       d.Position21 = +d.Position21;
-   d.SecBack21 = +d.SecBack21;
-	});
-	
+	var data = data2014;
 	var formatTime = d3.time.format("%H:%M"),
     formatMinutes = function(d) { return formatTime(new Date(2012, 0, 1, 0, 0,d)); }
 
 	//set scales for starting overall standings
 		var xScale = d3.scale.linear()
                     .domain([0, d3.max(data, function(d) { return d.Position21; })])
-
+//Uses final stage to get extend on seconds back
                      .range([padding, w - padding]);
 		var yScale = d3.scale.linear()
                      .domain([0, d3.max(data, function(d) { return d.SecBack21; })])
@@ -111,8 +66,7 @@ console.table(data2014);
 			   		return 100;})
 			   .attr("cy", function(d) {
 			   		return 100;})
-	//set colour
-
+	//set colour - highlight if selected
 			  .attr("fill", function(d) {
 				 if (d.Name == riderS) { return "rgb(227,27,35)" }
 			 else if (d.Team == teamS) { return "rgb(0,121,193)" }
@@ -144,7 +98,7 @@ var tips = svg.selectAll("circle")
 				.attr("class", "y axis")
 				.attr("transform", "translate(" + padding + ",0)")
 				.call(yAxis);		
-
+//x axis label
 	svg.append("text")
     .attr("class", "x label")
     .attr("text-anchor", "end")
@@ -153,7 +107,7 @@ var tips = svg.selectAll("circle")
 	.attr("font-family", "sans-serif")
 	.attr("fill", "rgb(90,90,90)")
     .text("General Classification - Position");	
-
+//Y axis label
 	svg.append("text")
     .attr("class", "y label")
     .attr("text-anchor", "end")
@@ -175,24 +129,7 @@ var tips = svg.selectAll("circle")
 			   .attr("cy", function(d) {
 			   		return yScale(d.SecBack1);})
 
-
-		/*		//Create labels
-			svg.selectAll("text")
-			   .data(data)
-			   .enter()
-			   .append("text")
-			   .text(function(d) {
-			   		return d.Hname;})
-			   .attr("x", function(d) {
-			   		return xScale(d.Position);})
-			   .attr("y", function(d) {
-			   		return yScale(d.SecBack) + 18;})
-			   .attr("font-family", "sans-serif")
-			   .attr("text-anchor", "middle")
-			   .attr("font-size", "11px")
-			   .attr("fill", "black");	
-			*/
-
+//change of selected team
 				d3.select("#myList")
 				.on("change", function() {
 			var mylist=document.getElementById("myList");
@@ -203,7 +140,6 @@ var riderS=myListR.options[myListR.selectedIndex].text;
 			   .data(data)
 			    .transition()
 			    .duration(1000)
-
 	//set colour
 			   .attr("fill", function(d) {
 			 if (d.Name == riderS) { return "rgb(227,27,35)" }
@@ -246,7 +182,7 @@ var teamS=mylist.options[mylist.selectedIndex].text
 			  })
 				});
 
-
+// on change in stage
 				d3.select("#stageList")
 				.on("change", function() {
 			var stageList=document.getElementById("stageList");
@@ -258,7 +194,7 @@ switch (stageN)
 {
   case "Stage 1" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL1.png";
-     data.forEach(function(d) {
+     $(data).each(function(d) {
     d.PositionZ = d.Position1;
 	d.SecBackZ = d.SecBack1;
 d.TimeBackZ = d.TimeBack1;
@@ -268,16 +204,17 @@ d.TimeBackZ = d.TimeBack1;
 case "Stage 2" : 
      //alert(stageN + " d.Position2");
 	 document.getElementById("imgClickAndChange").src = "images/PROFIL2.png";
-	 data.forEach(function(d) {
-    d.PositionZ = d.Position2;
-	d.SecBackZ = d.SecBack2;
-d.TimeBackZ = d.TimeBack2;
+	 $.each(data,function(d) {
+//THIS IS RIGHT - NEEDS IMPLEMENTING FOR THE OTHERS	
+    this.PositionZ = this.Position2;
+	this.SecBackZ = this.SecBack2;
+this.TimeBackZ = this.TimeBack2;
 	});
 	break;
 	case "Stage 3" : 
 	 document.getElementById("imgClickAndChange").src = "imagess/PROFIL3.png";
      
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
     d.PositionZ = d.Position3;
 	d.SecBackZ = d.SecBack3;
 d.TimeBackZ = d.TimeBack3;
@@ -287,7 +224,7 @@ d.TimeBackZ = d.TimeBack3;
 	case "Stage 4" : 
 	 document.getElementById("imgClickAndChange").src = "images/PROFIL4.png";
    
-	 data.forEach(function(d) { 
+	 $(data).each(function(d) { 
     d.PositionZ = d.Position4;
 	d.SecBackZ = d.SecBack4;
 d.TimeBackZ = d.TimeBack4;
@@ -296,7 +233,7 @@ d.TimeBackZ = d.TimeBack4;
   case "Stage 5" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL5.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position5;
 	d.SecBackZ = d.SecBack5;
@@ -306,7 +243,7 @@ d.TimeBackZ = d.TimeBack4;
 	case "Stage 6" : 
 	 document.getElementById("imgClickAndChange").src = "images/PROFIL6.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position6;
 	d.SecBackZ = d.SecBack6;
@@ -316,7 +253,7 @@ d.TimeBackZ = d.TimeBack4;
   case "Stage 7" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL7.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position7;
 	d.SecBackZ = d.SecBack7;
@@ -326,7 +263,7 @@ d.TimeBackZ = d.TimeBack4;
   case "Stage 8" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL8.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position8;
 	d.SecBackZ = d.SecBack8;
@@ -336,7 +273,7 @@ d.TimeBackZ = d.TimeBack4;
   case "Stage 9" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL9.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position9;
 	d.SecBackZ = d.SecBack9;
@@ -346,7 +283,7 @@ d.TimeBackZ = d.TimeBack4;
   case "Stage 10" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL10.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position10;
 	d.SecBackZ = d.SecBack10;
@@ -357,7 +294,7 @@ d.TimeBackZ = d.TimeBack4;
   case "Stage 11" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL11.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position11;
 	d.SecBackZ = d.SecBack11;
@@ -370,7 +307,7 @@ d.TimeBackZ = d.TimeBack4;
    case "Stage 12" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL12.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position12;
 	d.SecBackZ = d.SecBack12;
@@ -383,7 +320,7 @@ d.TimeBackZ = d.TimeBack4;
    case "Stage 13" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL13.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position13;
 	d.SecBackZ = d.SecBack13;
@@ -395,7 +332,7 @@ d.TimeBackZ = d.TimeBack4;
    case "Stage 14" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL14.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position14;
 	d.SecBackZ = d.SecBack14;
@@ -407,7 +344,7 @@ d.TimeBackZ = d.TimeBack4;
      case "Stage 15" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL15.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position15;
 	d.SecBackZ = d.SecBack15;
@@ -419,7 +356,7 @@ d.TimeBackZ = d.TimeBack4;
    case "Stage 16" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL16.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position16;
 	d.SecBackZ = d.SecBack16;
@@ -432,7 +369,7 @@ d.TimeBackZ = d.TimeBack4;
    case "Stage 17" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL17.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position17;
 	d.SecBackZ = d.SecBack17;
@@ -445,7 +382,7 @@ d.TimeBackZ = d.TimeBack4;
     case "Stage 18" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL18.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position18;
 	d.SecBackZ = d.SecBack18;
@@ -458,7 +395,7 @@ d.TimeBackZ = d.TimeBack4;
   case "Stage 19" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL19.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position19;
 	d.SecBackZ = d.SecBack19;
@@ -471,7 +408,7 @@ d.TimeBackZ = d.TimeBack4;
   case "Stage 20" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL20.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position20;
 	d.SecBackZ = d.SecBack20;
@@ -484,7 +421,7 @@ d.TimeBackZ = d.TimeBack4;
   case "Stage 21" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL21.png";
      //alert(stageN + " d.Position3");
-	 data.forEach(function(d) {
+	 $(data).each(function(d) {
   
     d.PositionZ = d.Position21;
 	d.SecBackZ = d.SecBack21;
