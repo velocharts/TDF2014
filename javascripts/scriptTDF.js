@@ -20,12 +20,12 @@ var dropdown = document.getElementById("myListR");
 for (var i = 0; i < riderlist.length; ++i) { dropdown[dropdown.length] = new Option(riderlist[i], riderlist[i]);};
 var riderS=myListR.options[myListR.selectedIndex].text;
 
-
+console.table(data2014);
 
 
 
 	//Data for starting overall standings
-		d3.csv("Data/2014TDFALL.csv", function(error, data) {;
+	
 		data.forEach(function(d) {
     d.Position = +d.Position1;
     d.SecBack = +d.SecBack1;
@@ -523,4 +523,3 @@ d.TimeBackZ = d.TimeBack4;
 				}); 		
 
 
-});
