@@ -190,243 +190,198 @@ var teamS=mylist.options[mylist.selectedIndex].text
 var stageN=stageList.options[stageList.selectedIndex].text
 
 
+
+
 switch (stageN)
 {
   case "Stage 1" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL1.png";
-     $(data).each(function(d) {
-    d.PositionZ = d.Position1;
-	d.SecBackZ = d.SecBack1;
-d.TimeBackZ = d.TimeBack1;
-
+	 $.each(data,function(d) {
+    this.PositionZ = this.Position1;
+	this.SecBackZ = this.SecBack1;
+this.TimeBackZ = this.TimeBack1;
 	});
      break;
 case "Stage 2" : 
      //alert(stageN + " d.Position2");
 	 document.getElementById("imgClickAndChange").src = "images/PROFIL2.png";
-	 $.each(data,function(d) {
-//THIS IS RIGHT - NEEDS IMPLEMENTING FOR THE OTHERS	
+		 $.each(data,function(d) {
     this.PositionZ = this.Position2;
 	this.SecBackZ = this.SecBack2;
 this.TimeBackZ = this.TimeBack2;
 	});
+	
 	break;
 	case "Stage 3" : 
 	 document.getElementById("imgClickAndChange").src = "imagess/PROFIL3.png";
      
-	 $(data).each(function(d) {
-    d.PositionZ = d.Position3;
-	d.SecBackZ = d.SecBack3;
-d.TimeBackZ = d.TimeBack3;
+		 $.each(data,function(d) {
+    this.PositionZ = this.Position3;
+	this.SecBackZ = this.SecBack3;
+this.TimeBackZ = this.TimeBack3;
 	});
 
 	break;
 	case "Stage 4" : 
 	 document.getElementById("imgClickAndChange").src = "images/PROFIL4.png";
-   
-	 $(data).each(function(d) { 
-    d.PositionZ = d.Position4;
-	d.SecBackZ = d.SecBack4;
-d.TimeBackZ = d.TimeBack4;
+		 $.each(data,function(d) {
+    this.PositionZ = this.Position4;
+	this.SecBackZ = this.SecBack4;
+this.TimeBackZ = this.TimeBack4;
 	});
   break;
   case "Stage 5" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL5.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position5;
-	d.SecBackZ = d.SecBack5;
-	d.TimeBackZ = d.TimeBack5;
+		 $.each(data,function(d) {
+    this.PositionZ = this.Position5;
+	this.SecBackZ = this.SecBack5;
+this.TimeBackZ = this.TimeBack5;
 	});
 	 break;
 	case "Stage 6" : 
 	 document.getElementById("imgClickAndChange").src = "images/PROFIL6.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position6;
-	d.SecBackZ = d.SecBack6;
-	d.TimeBackZ = d.TimeBack6;
+ 		 $.each(data,function(d) {
+    this.PositionZ = this.Position6;
+	this.SecBackZ = this.SecBack6;
+this.TimeBackZ = this.TimeBack6;
 	});
   break;
   case "Stage 7" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL7.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position7;
-	d.SecBackZ = d.SecBack7;
-	d.TimeBackZ = d.TimeBack7;
+  		 $.each(data,function(d) {
+    this.PositionZ = this.Position7;
+	this.SecBackZ = this.SecBack7;
+this.TimeBackZ = this.TimeBack7;
 	});
   break;
   case "Stage 8" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL8.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position8;
-	d.SecBackZ = d.SecBack8;
-	d.TimeBackZ = d.TimeBack8;
+		 $.each(data,function(d) {
+    this.PositionZ = this.Position8;
+	this.SecBackZ = this.SecBack8;
+this.TimeBackZ = this.TimeBack8;
 	});
   break;
   case "Stage 9" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL9.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position9;
-	d.SecBackZ = d.SecBack9;
-	d.TimeBackZ = d.TimeBack9;
+  		 $.each(data,function(d) {
+    this.PositionZ = this.Position9;
+	this.SecBackZ = this.SecBack9;
+this.TimeBackZ = this.TimeBack9;
 	});
   break;
   case "Stage 10" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL10.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position10;
-	d.SecBackZ = d.SecBack10;
-		d.TimeBackZ = d.TimeBack10;
+   		 $.each(data,function(d) {
+    this.PositionZ = this.Position10;
+	this.SecBackZ = this.SecBack10;
+this.TimeBackZ = this.TimeBack10;
 	});
 
   break;
   case "Stage 11" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL11.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position11;
-	d.SecBackZ = d.SecBack11;
-	d.TimeBackZ = d.TimeBack11;
-
+$.each(data,function(d) {
+this.PositionZ = this.Position11;
+this.SecBackZ = this.SecBack11;
+this.TimeBackZ = this.TimeBack11;
 	});
 
   break;
   
    case "Stage 12" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL12.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position12;
-	d.SecBackZ = d.SecBack12;
-	d.TimeBackZ = d.TimeBack12;
-
+ 		 $.each(data,function(d) {
+    this.PositionZ = this.Position12;
+	this.SecBackZ = this.SecBack12;
+this.TimeBackZ = this.TimeBack12;
 	});
 
   break;
  
    case "Stage 13" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL13.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position13;
-	d.SecBackZ = d.SecBack13;
-	d.TimeBackZ = d.TimeBack13;
-
+   		 $.each(data,function(d) {
+    this.PositionZ = this.Position13;
+	this.SecBackZ = this.SecBack13;
+this.TimeBackZ = this.TimeBack13;
 	});
 
   break;
    case "Stage 14" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL14.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position14;
-	d.SecBackZ = d.SecBack14;
-	d.TimeBackZ = d.TimeBack14;
-
+  		 $.each(data,function(d) {
+    this.PositionZ = this.Position14;
+	this.SecBackZ = this.SecBack14;
+this.TimeBackZ = this.TimeBack14;
 	});
 
   break;
      case "Stage 15" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL15.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position15;
-	d.SecBackZ = d.SecBack15;
-	d.TimeBackZ = d.TimeBack15;
-
+ 		 $.each(data,function(d) {
+    this.PositionZ = this.Position15;
+	this.SecBackZ = this.SecBack15;
+this.TimeBackZ = this.TimeBack15;
 	});
 
   break;
    case "Stage 16" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL16.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position16;
-	d.SecBackZ = d.SecBack16;
-	d.TimeBackZ = d.TimeBack16;
-
+  		 $.each(data,function(d) {
+    this.PositionZ = this.Position16;
+	this.SecBackZ = this.SecBack16;
+this.TimeBackZ = this.TimeBack16;
 	});
 
   break;
   
    case "Stage 17" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL17.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position17;
-	d.SecBackZ = d.SecBack17;
-	d.TimeBackZ = d.TimeBack17;
-
+  		 $.each(data,function(d) {
+    this.PositionZ = this.Position17;
+	this.SecBackZ = this.SecBack17;
+this.TimeBackZ = this.TimeBack17;
 	});
 
   break;
   
     case "Stage 18" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL18.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position18;
-	d.SecBackZ = d.SecBack18;
-	d.TimeBackZ = d.TimeBack18;
-
+ 		 $.each(data,function(d) {
+    this.PositionZ = this.Position18;
+	this.SecBackZ = this.SecBack18;
+this.TimeBackZ = this.TimeBack18;
 	});
 
   break;
   
   case "Stage 19" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL19.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position19;
-	d.SecBackZ = d.SecBack19;
-	d.TimeBackZ = d.TimeBack19;
-
+		 $.each(data,function(d) {
+    this.PositionZ = this.Position19;
+	this.SecBackZ = this.SecBack19;
+this.TimeBackZ = this.TimeBack19;
 	});
 
   break;
   
   case "Stage 20" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL20.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position20;
-	d.SecBackZ = d.SecBack20;
-	d.TimeBackZ = d.TimeBack20;
-
+ 		 $.each(data,function(d) {
+    this.PositionZ = this.Position20;
+	this.SecBackZ = this.SecBack20;
+this.TimeBackZ = this.TimeBack20;
 	});
 
   break;
   
   case "Stage 21" : 
    document.getElementById("imgClickAndChange").src = "images/PROFIL21.png";
-     //alert(stageN + " d.Position3");
-	 $(data).each(function(d) {
-  
-    d.PositionZ = d.Position21;
-	d.SecBackZ = d.SecBack21;
-	d.TimeBackZ = d.TimeBack21;
-
+   		 $.each(data,function(d) {
+    this.PositionZ = this.Position21;
+	this.SecBackZ = this.SecBack21;
+this.TimeBackZ = this.TimeBack21;
 	});
 
   break;
