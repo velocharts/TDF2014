@@ -21,7 +21,27 @@ for (var i = 0; i < riderlist.length; ++i) { dropdown[dropdown.length] = new Opt
 var riderS=myListR.options[myListR.selectedIndex].text;
 
 //console.table(data2014);
-
+var selection;
+$(function() {
+    $( "#slider" ).slider({
+      value:1,
+      min: 1,
+      max: 21,
+      step: 1,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.value );
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) );
+  });
+  
+  $( "#slider" ).slider({
+  change: function( event, ui ) {
+  selection = $( "#slider" ).slider( "value" );
+  console.log(selection);
+  
+  }
+});
 
 	//Data for starting overall standings
 	

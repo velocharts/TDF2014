@@ -2,6 +2,12 @@ body
 {
 background-color:rgb(240,240,240);
 }
+
+#slider{
+width: 300px;
+}
+
+
  #header {
 	font-size: 18px;
    font-family: Helvetica, Arial, Sans-Serif;
