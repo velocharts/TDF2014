@@ -1,4 +1,4 @@
-
+$(document).ready(function() {
 	var circle
 	var data
 
@@ -66,7 +66,7 @@ $(function() {
 							  .tickFormat(formatMinutes);
 
 	//Create SVG element
-		var svg = d3.select("body")
+		var svg = d3.select("#chart")
 						.append("svg")
 						.attr("width", w)
 						.attr("height", h);
@@ -453,4 +453,4 @@ this.TimeBackZ = this.TimeBack21;
 			  })         */
 				}}); 		
 
-
+});
