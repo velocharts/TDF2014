@@ -3,8 +3,9 @@ body
 background-color:rgb(240,240,240);
 }
 
-#slider{
-
+#sliderDiv{
+padding-top:20px!important;
+padding-bottom:20px!important;
 }
 
 

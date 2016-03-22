@@ -20,7 +20,12 @@ var dropdown = document.getElementById("myListR");
 for (var i = 0; i < riderlist.length; ++i) { dropdown[dropdown.length] = new Option(riderlist[i], riderlist[i]);};
 var riderS=myListR.options[myListR.selectedIndex].text;
 
+
+		
+			
+
 //console.table(data2014);
+/*
 var selection;
 $(function() {
     $( "#slider" ).slider({
@@ -34,8 +39,8 @@ $(function() {
     });
     $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) );
   });
+  */
   
-
 
 	//Data for starting overall standings
 	
@@ -206,26 +211,26 @@ var teamS=mylist.options[mylist.selectedIndex].text
 });
 */				
 // on change in stage
-			$( "#slider" ).slider({
-  change: function( event, ui ) {
+		$(".btn").click(function() {
 	
-var stageN = $( "#slider" ).slider( "value" );
-
+var stageN = this.id;
+console.log(stageN);
 switch (stageN)
 {
-  case 1 : 
-   //document.getElementById("imgClickAndChange").src = "images/PROFIL1.png";
-   $("#stageLabel").html("Stage: " + stageN);
+  case "stageButton1" : 
+  	$(".btn").removeClass("active");
+	$("#stageButton1").addClass("active");
 	 $.each(data,function(d) {
     this.PositionZ = this.Position1;
 	this.SecBackZ = this.SecBack1;
 this.TimeBackZ = this.TimeBack1;
 	});
      break;
-case 2 : 
+case "stageButton2" : 
      //alert(stageN + " d.Position2");
 	// document.getElementById("imgClickAndChange").src = "images/PROFIL2.png";
-	$("#stageLabel").html("Stage: " + stageN);
+	$(".btn").removeClass("active");
+	$("#stageButton2").addClass("active");
 		 $.each(data,function(d) {
     this.PositionZ = this.Position2;
 	this.SecBackZ = this.SecBack2;
@@ -233,9 +238,10 @@ this.TimeBackZ = this.TimeBack2;
 	});
 	
 	break;
-	case 3 : 
+	case "stageButton3"  : 
 	 //document.getElementById("imgClickAndChange").src = "imagess/PROFIL3.png";
-     $("#stageLabel").html("Stage: " + stageN);
+     	$(".btn").removeClass("active");
+	$("#stageButton3").addClass("active");
 		 $.each(data,function(d) {
     this.PositionZ = this.Position3;
 	this.SecBackZ = this.SecBack3;
@@ -243,63 +249,70 @@ this.TimeBackZ = this.TimeBack3;
 	});
 
 	break;
-	case 4 : 
+	case "stageButton4"  : 
 	 //document.getElementById("imgClickAndChange").src = "images/PROFIL4.png";
-	 $("#stageLabel").html("Stage: " + stageN);
+	 	$(".btn").removeClass("active");
+	$("#stageButton4").addClass("active");
 		 $.each(data,function(d) {
     this.PositionZ = this.Position4;
 	this.SecBackZ = this.SecBack4;
 this.TimeBackZ = this.TimeBack4;
 	});
   break;
-  case 5 : 
+  case "stageButton5"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL5.png";
-   $("#stageLabel").html("Stage: " + stageN);
+   	$(".btn").removeClass("active");
+	$("#stageButton5").addClass("active");
 		 $.each(data,function(d) {
     this.PositionZ = this.Position5;
 	this.SecBackZ = this.SecBack5;
 this.TimeBackZ = this.TimeBack5;
 	});
 	 break;
-	case 6 : 
+	case "stageButton6"  : 
 	 //document.getElementById("imgClickAndChange").src = "images/PROFIL6.png";
-	 $("#stageLabel").html("Stage: " + stageN);
+	 	$(".btn").removeClass("active");
+	$("#stageButton6").addClass("active");
  		 $.each(data,function(d) {
     this.PositionZ = this.Position6;
 	this.SecBackZ = this.SecBack6;
 this.TimeBackZ = this.TimeBack6;
 	});
   break;
-  case 7 : 
+  case "stageButton7"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL7.png";
-   $("#stageLabel").html("Stage: " + stageN);
+   	$(".btn").removeClass("active");
+	$("#stageButton7").addClass("active");
   		 $.each(data,function(d) {
     this.PositionZ = this.Position7;
 	this.SecBackZ = this.SecBack7;
 this.TimeBackZ = this.TimeBack7;
 	});
   break;
-  case 8 : 
+  case "stageButton8"  : 
 //   document.getElementById("imgClickAndChange").src = "images/PROFIL8.png";
-$("#stageLabel").html("Stage: " + stageN);
+	$(".btn").removeClass("active");
+	$("#stageButton8").addClass("active");
 		 $.each(data,function(d) {
     this.PositionZ = this.Position8;
 	this.SecBackZ = this.SecBack8;
 this.TimeBackZ = this.TimeBack8;
 	});
   break;
-  case 9 : 
+  case "stageButton9"  : 
   // document.getElementById("imgClickAndChange").src = "images/PROFIL9.png";
-  $("#stageLabel").html("Stage: " + stageN);
+  	$(".btn").removeClass("active");
+	$("#stageButton9").addClass("active");
   		 $.each(data,function(d) {
     this.PositionZ = this.Position9;
 	this.SecBackZ = this.SecBack9;
 this.TimeBackZ = this.TimeBack9;
 	});
   break;
-  case 10 : 
+  case "stageButton10"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL10.png";
-   $("#stageLabel").html("Stage: " + stageN);
+   	$(".btn").removeClass("active");
+	$("#stageButton10").addClass("active");
    		 $.each(data,function(d) {
     this.PositionZ = this.Position10;
 	this.SecBackZ = this.SecBack10;
@@ -307,9 +320,10 @@ this.TimeBackZ = this.TimeBack10;
 	});
 
   break;
-  case 11 : 
+  case "stageButton11"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL11.png";
-   $("#stageLabel").html("Stage: " + stageN);
+   	$(".btn").removeClass("active");
+	$("#stageButton11").addClass("active");
 $.each(data,function(d) {
 this.PositionZ = this.Position11;
 this.SecBackZ = this.SecBack11;
@@ -318,9 +332,10 @@ this.TimeBackZ = this.TimeBack11;
 
   break;
   
-   case 12 : 
+   case "stageButton12"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL12.png";
-   $("#stageLabel").html("Stage: " + stageN);
+   	$(".btn").removeClass("active");
+	$("#stageButton12").addClass("active");
  		 $.each(data,function(d) {
     this.PositionZ = this.Position12;
 	this.SecBackZ = this.SecBack12;
@@ -329,9 +344,10 @@ this.TimeBackZ = this.TimeBack12;
 
   break;
  
-   case 13 : 
+   case "stageButton13"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL13.png";
-   $("#stageLabel").html("Stage: " + stageN);
+   	$(".btn").removeClass("active");
+	$("#stageButton13").addClass("active");
    		 $.each(data,function(d) {
     this.PositionZ = this.Position13;
 	this.SecBackZ = this.SecBack13;
@@ -339,9 +355,10 @@ this.TimeBackZ = this.TimeBack13;
 	});
 
   break;
-   case 14 : 
+   case "stageButton14"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL14.png";
-   $("#stageLabel").html("Stage: " + stageN);
+   	$(".btn").removeClass("active");
+	$("#stageButton14").addClass("active");
   		 $.each(data,function(d) {
     this.PositionZ = this.Position14;
 	this.SecBackZ = this.SecBack14;
@@ -349,9 +366,10 @@ this.TimeBackZ = this.TimeBack14;
 	});
 
   break;
-     case 15 : 
+     case "stageButton15"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL15.png";
-   $("#stageLabel").html("Stage: " + stageN);
+   	$(".btn").removeClass("active");
+	$("#stageButton15").addClass("active");
  		 $.each(data,function(d) {
     this.PositionZ = this.Position15;
 	this.SecBackZ = this.SecBack15;
@@ -359,9 +377,10 @@ this.TimeBackZ = this.TimeBack15;
 	});
 
   break;
-   case 16 : 
+   case "stageButton16"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL16.png";
-   $("#stageLabel").html("Stage: " + stageN);
+   	$(".btn").removeClass("active");
+	$("#stageButton16").addClass("active");
   		 $.each(data,function(d) {
     this.PositionZ = this.Position16;
 	this.SecBackZ = this.SecBack16;
@@ -370,9 +389,10 @@ this.TimeBackZ = this.TimeBack16;
 
   break;
   
-   case 17 : 
+   case "stageButton17"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL17.png";
-   $("#stageLabel").html("Stage: " + stageN);
+   	$(".btn").removeClass("active");
+	$("#stageButton17").addClass("active");
   		 $.each(data,function(d) {
     this.PositionZ = this.Position17;
 	this.SecBackZ = this.SecBack17;
@@ -381,9 +401,10 @@ this.TimeBackZ = this.TimeBack17;
 
   break;
   
-    case 18 : 
+    case "stageButton18"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL18.png";
-   $("#stageLabel").html("Stage: " + stageN);
+   	$(".btn").removeClass("active");
+	$("#stageButton18").addClass("active");
  		 $.each(data,function(d) {
     this.PositionZ = this.Position18;
 	this.SecBackZ = this.SecBack18;
@@ -392,9 +413,10 @@ this.TimeBackZ = this.TimeBack18;
 
   break;
   
-  case 19 : 
+  case "stageButton19"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL19.png";
-   $("#stageLabel").html("Stage: " + stageN);
+   	$(".btn").removeClass("active");
+	$("#stageButton19").addClass("active");
 		 $.each(data,function(d) {
     this.PositionZ = this.Position19;
 	this.SecBackZ = this.SecBack19;
@@ -403,9 +425,10 @@ this.TimeBackZ = this.TimeBack19;
 
   break;
   
-  case 20 : 
+  case "stageButton20"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL20.png";
-   $("#stageLabel").html("Stage: " + stageN);
+   	$(".btn").removeClass("active");
+	$("#stageButton20").addClass("active");
  		 $.each(data,function(d) {
     this.PositionZ = this.Position20;
 	this.SecBackZ = this.SecBack20;
@@ -414,9 +437,10 @@ this.TimeBackZ = this.TimeBack20;
 
   break;
   
-  case 21 : 
+  case "stageButton21"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL21.png";
-   $("#stageLabel").html("Stage: " + stageN);
+   	$(".btn").removeClass("active");
+	$("#stageButton21").addClass("active");
    		 $.each(data,function(d) {
     this.PositionZ = this.Position21;
 	this.SecBackZ = this.SecBack21;
@@ -451,6 +475,9 @@ this.TimeBackZ = this.TimeBack21;
 			  if (d.Team == teamS) { return 7}
 			  else {  return 5 }
 			  })         */
-				}}); 		
+				}); 		
 
+		
+				
+				
 });
