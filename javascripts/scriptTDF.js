@@ -21,25 +21,7 @@ for (var i = 0; i < riderlist.length; ++i) { dropdown[dropdown.length] = new Opt
 var riderS=myListR.options[myListR.selectedIndex].text;
 
 
-		
-			
 
-//console.table(data2014);
-/*
-var selection;
-$(function() {
-    $( "#slider" ).slider({
-      value:1,
-      min: 1,
-      max: 21,
-      step: 1,
-      slide: function( event, ui ) {
-        $( "#amount" ).val( "$" + ui.value );
-      }
-    });
-    $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) );
-  });
-  */
   
 
 	//Data for starting overall standings
@@ -201,24 +183,30 @@ var teamS=mylist.options[mylist.selectedIndex].text
 			  })
 				});
 
-	/*			
-				  $( "#slider" ).slider({
-  change: function( event, ui ) {
-  selection = $( "#slider" ).slider( "value" );
-  console.log(selection);
-  
-  }
-});
-*/				
+				
+				
+// TRY TO KEEP ALL TOUR SPECIFIC CODE BELOW THIS LINE	
+var stageBlurb = [];
+ $("#stageTitle").html(stageData2013.course[0] + " - " + stageData2013.distance[0]);
+  $("#stageText").html(stageBlurb[0]);
+
+		
 // on change in stage
 		$(".btn").click(function() {
 	
 var stageN = this.id;
-console.log(stageN);
+
+//test array for stage details
+
+
 switch (stageN)
 {
   case "stageButton1" : 
-  	$(".btn").removeClass("active focus");
+  
+  $("#stageTitle").html(stageData2013.course[0] + " - " + stageData2013.distance[0]);
+  $("#stageText").html(stageBlurb[0]);
+
+  $(".btn").removeClass("active focus");
 	$("#stageButton1").addClass("active focus");
 	 $.each(data,function(d) {
     this.PositionZ = this.Position1;
@@ -229,6 +217,10 @@ this.TimeBackZ = this.TimeBack1;
 case "stageButton2" : 
      //alert(stageN + " d.Position2");
 	// document.getElementById("imgClickAndChange").src = "images/PROFIL2.png";
+    $("#stageTitle").html(stageData2013.course[1] + " - " + stageData2013.distance[1]);
+
+    $("#stageText").html(stageBlurb[1]);
+
 	$(".btn").removeClass("active focus");
 	$("#stageButton2").addClass("active focus");
 		 $.each(data,function(d) {
@@ -240,7 +232,10 @@ this.TimeBackZ = this.TimeBack2;
 	break;
 	case "stageButton3"  : 
 	 //document.getElementById("imgClickAndChange").src = "imagess/PROFIL3.png";
-     	$(".btn").removeClass("active focus");
+    $("#stageTitle").html(stageData2013.course[2] + " - " + stageData2013.distance[2]);
+
+	 
+ $(".btn").removeClass("active focus");
 	$("#stageButton3").addClass("active focus");
 		 $.each(data,function(d) {
     this.PositionZ = this.Position3;
@@ -251,7 +246,9 @@ this.TimeBackZ = this.TimeBack3;
 	break;
 	case "stageButton4"  : 
 	 //document.getElementById("imgClickAndChange").src = "images/PROFIL4.png";
-	 	$(".btn").removeClass("active focus");
+	     $("#stageTitle").html(stageData2013.course[3] + " - " + stageData2013.distance[3]);
+
+		$(".btn").removeClass("active focus");
 	$("#stageButton4").addClass("active focus");
 		 $.each(data,function(d) {
     this.PositionZ = this.Position4;
@@ -261,7 +258,9 @@ this.TimeBackZ = this.TimeBack4;
   break;
   case "stageButton5"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL5.png";
-   	$(".btn").removeClass("active focus");
+      $("#stageTitle").html(stageData2013.course[4] + " - " + stageData2013.distance[4]);
+
+	$(".btn").removeClass("active focus");
 	$("#stageButton5").addClass("active focus");
 		 $.each(data,function(d) {
     this.PositionZ = this.Position5;
@@ -271,7 +270,9 @@ this.TimeBackZ = this.TimeBack5;
 	 break;
 	case "stageButton6"  : 
 	 //document.getElementById("imgClickAndChange").src = "images/PROFIL6.png";
-	 	$(".btn").removeClass("active focus");
+     $("#stageTitle").html(stageData2013.course[5] + " - " + stageData2013.distance[5]);
+	
+ 	$(".btn").removeClass("active focus");
 	$("#stageButton6").addClass("active focus");
  		 $.each(data,function(d) {
     this.PositionZ = this.Position6;
@@ -281,7 +282,9 @@ this.TimeBackZ = this.TimeBack6;
   break;
   case "stageButton7"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL7.png";
-   	$(".btn").removeClass("active focus");
+   	     $("#stageTitle").html(stageData2013.course[6] + " - " + stageData2013.distance[6]);
+
+	$(".btn").removeClass("active focus");
 	$("#stageButton7").addClass("active focus");
   		 $.each(data,function(d) {
     this.PositionZ = this.Position7;
@@ -291,6 +294,8 @@ this.TimeBackZ = this.TimeBack7;
   break;
   case "stageButton8"  : 
 //   document.getElementById("imgClickAndChange").src = "images/PROFIL8.png";
+	     $("#stageTitle").html(stageData2013.course[7] + " - " + stageData2013.distance[7]);
+
 	$(".btn").removeClass("active focus");
 	$("#stageButton8").addClass("active focus");
 		 $.each(data,function(d) {
@@ -301,7 +306,9 @@ this.TimeBackZ = this.TimeBack8;
   break;
   case "stageButton9"  : 
   // document.getElementById("imgClickAndChange").src = "images/PROFIL9.png";
-  	$(".btn").removeClass("active focus");
+  	     $("#stageTitle").html(stageData2013.course[8] + " - " + stageData2013.distance[8]);
+
+	$(".btn").removeClass("active focus");
 	$("#stageButton9").addClass("active focus");
   		 $.each(data,function(d) {
     this.PositionZ = this.Position9;
@@ -311,7 +318,9 @@ this.TimeBackZ = this.TimeBack9;
   break;
   case "stageButton10"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL10.png";
-   	$(".btn").removeClass("active focus");
+   	     $("#stageTitle").html(stageData2013.course[9] + " - " + stageData2013.distance[9]);
+
+	$(".btn").removeClass("active focus");
 	$("#stageButton10").addClass("active focus");
    		 $.each(data,function(d) {
     this.PositionZ = this.Position10;
@@ -322,7 +331,9 @@ this.TimeBackZ = this.TimeBack10;
   break;
   case "stageButton11"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL11.png";
-   	$(".btn").removeClass("active focus");
+   	    $("#stageTitle").html(stageData2013.course[10] + " - " + stageData2013.distance[10]);
+
+	$(".btn").removeClass("active focus");
 	$("#stageButton11").addClass("active focus");
 $.each(data,function(d) {
 this.PositionZ = this.Position11;
@@ -334,7 +345,9 @@ this.TimeBackZ = this.TimeBack11;
   
    case "stageButton12"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL12.png";
-   	$(".btn").removeClass("active focus");
+   	    $("#stageTitle").html(stageData2013.course[11] + " - " + stageData2013.distance[11]);
+
+	$(".btn").removeClass("active focus");
 	$("#stageButton12").addClass("active focus");
  		 $.each(data,function(d) {
     this.PositionZ = this.Position12;
@@ -346,7 +359,9 @@ this.TimeBackZ = this.TimeBack12;
  
    case "stageButton13"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL13.png";
-   	$(".btn").removeClass("active focus");
+   	     $("#stageTitle").html(stageData2013.course[12] + " - " + stageData2013.distance[12]);
+
+	$(".btn").removeClass("active focus");
 	$("#stageButton13").addClass("active focus");
    		 $.each(data,function(d) {
     this.PositionZ = this.Position13;
@@ -357,7 +372,9 @@ this.TimeBackZ = this.TimeBack13;
   break;
    case "stageButton14"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL14.png";
-   	$(".btn").removeClass("active focus");
+   	     $("#stageTitle").html(stageData2013.course[13] + " - " + stageData2013.distance[13]);
+
+	$(".btn").removeClass("active focus");
 	$("#stageButton14").addClass("active focus");
   		 $.each(data,function(d) {
     this.PositionZ = this.Position14;
@@ -368,7 +385,9 @@ this.TimeBackZ = this.TimeBack14;
   break;
      case "stageButton15"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL15.png";
-   	$(".btn").removeClass("active focus");
+   	     $("#stageTitle").html(stageData2013.course[14] + " - " + stageData2013.distance[14]);
+
+	 $(".btn").removeClass("active focus");
 	$("#stageButton15").addClass("active focus");
  		 $.each(data,function(d) {
     this.PositionZ = this.Position15;
@@ -379,7 +398,9 @@ this.TimeBackZ = this.TimeBack15;
   break;
    case "stageButton16"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL16.png";
-   	$(".btn").removeClass("active focus");
+   	     $("#stageTitle").html(stageData2013.course[15] + " - " + stageData2013.distance[15]);
+
+	$(".btn").removeClass("active focus");
 	$("#stageButton16").addClass("active focus");
   		 $.each(data,function(d) {
     this.PositionZ = this.Position16;
@@ -391,7 +412,9 @@ this.TimeBackZ = this.TimeBack16;
   
    case "stageButton17"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL17.png";
-   	$(".btn").removeClass("active focus");
+   	     $("#stageTitle").html(stageData2013.course[16] + " - " + stageData2013.distance[16]);
+
+	$(".btn").removeClass("active focus");
 	$("#stageButton17").addClass("active focus");
   		 $.each(data,function(d) {
     this.PositionZ = this.Position17;
@@ -403,7 +426,9 @@ this.TimeBackZ = this.TimeBack17;
   
     case "stageButton18"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL18.png";
-   	$(".btn").removeClass("active focus");
+   	     $("#stageTitle").html(stageData2013.course[17] + " - " + stageData2013.distance[17]);
+
+	$(".btn").removeClass("active focus");
 	$("#stageButton18").addClass("active focus");
  		 $.each(data,function(d) {
     this.PositionZ = this.Position18;
@@ -415,7 +440,9 @@ this.TimeBackZ = this.TimeBack18;
   
   case "stageButton19"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL19.png";
-   	$(".btn").removeClass("active focus");
+   	     $("#stageTitle").html(stageData2013.course[18] + " - " + stageData2013.distance[18]);
+
+	$(".btn").removeClass("active focus");
 	$("#stageButton19").addClass("active focus");
 		 $.each(data,function(d) {
     this.PositionZ = this.Position19;
@@ -427,7 +454,9 @@ this.TimeBackZ = this.TimeBack19;
   
   case "stageButton20"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL20.png";
-   	$(".btn").removeClass("active focus");
+   	     $("#stageTitle").html(stageData2013.course[19] + " - " + stageData2013.distance[19]);
+
+	$(".btn").removeClass("active focus");
 	$("#stageButton20").addClass("active focus");
  		 $.each(data,function(d) {
     this.PositionZ = this.Position20;
@@ -439,7 +468,9 @@ this.TimeBackZ = this.TimeBack20;
   
   case "stageButton21"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL21.png";
-   	$(".btn").removeClass("active focus");
+   	     $("#stageTitle").html(stageData2013.course[20] + " - " + stageData2013.distance[20]);
+
+	$(".btn").removeClass("active focus");
 	$("#stageButton21").addClass("active focus");
    		 $.each(data,function(d) {
     this.PositionZ = this.Position21;
