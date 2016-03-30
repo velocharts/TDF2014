@@ -8,6 +8,7 @@ $(document).ready(function() {
 			var w = 840;
 			var h = 1050;
 			var padding = 60;
+			var duration = 2000; //duration for chart update
 
 var mylist=document.getElementById("myList");
 var teamS=mylist.options[mylist.selectedIndex].text;
@@ -182,9 +183,68 @@ var teamS=mylist.options[mylist.selectedIndex].text
 			  else {  return 5 }
 			  })
 				});
+var timeout1 = [];
+				var timeout2 = [];var timeout3 = [];var timeout4 = [];var timeout5 = [];
+				var timeout6 = [];var timeout7 = [];var timeout8 = [];var timeout9 = [];
+				var timeout10 = [];var timeout11 = [];var timeout12 = [];var timeout13 = [];
+				var timeout14 = [];var timeout15 = [];var timeout16 = [];var timeout17 = [];
+				var timeout18 = [];var timeout19 = [];
+				
+				
+	$("#play").click(function() {	
 
-				
-				
+	$("#stageButton2").click();
+	var delayTime = 200;
+	
+	
+	timeout1 = setTimeout(function() {$("#stageButton3").click();},(duration) + delayTime);
+	timeout2 = setTimeout(function() {$("#stageButton4").click();},(duration * 2) + delayTime);
+	timeout3 = setTimeout(function() {$("#stageButton5").click();},(duration * 3) + delayTime);
+	timeout4 = setTimeout(function() {$("#stageButton6").click();},(duration * 4) + delayTime);
+	timeout5 = setTimeout(function() {$("#stageButton7").click();},(duration * 5) + delayTime);
+	timeout6 = setTimeout(function() {$("#stageButton8").click();},(duration * 6) + delayTime);
+	timeout7 = setTimeout(function() {$("#stageButton9").click();},(duration * 7) + delayTime);
+	timeout8 = setTimeout(function() {$("#stageButton10").click();},(duration * 8) + delayTime);
+	timeout9 = setTimeout(function() {$("#stageButton11").click();},(duration * 9) + delayTime);
+	timeout10 = setTimeout(function() {$("#stageButton12").click();},(duration * 10) + delayTime);
+	timeout11 = setTimeout(function() {$("#stageButton13").click();},(duration * 11) + delayTime);
+	timeout12 = setTimeout(function() {$("#stageButton14").click();},(duration * 12) + delayTime);
+	timeout13 = setTimeout(function() {$("#stageButton15").click();},(duration * 13) + delayTime);
+	timeout14 = setTimeout(function() {$("#stageButton16").click();},(duration * 14) + delayTime);
+	timeout15 = setTimeout(function() {$("#stageButton17").click();},(duration * 15) + delayTime);
+	timeout16 = setTimeout(function() {$("#stageButton18").click();},(duration * 16) + delayTime);
+	timeout17 = setTimeout(function() {$("#stageButton19").click();},(duration * 17) + delayTime);
+	timeout18 = setTimeout(function() {$("#stageButton20").click();},(duration * 18) + delayTime);
+	timeout19 = setTimeout(function() {$("#stageButton21").click();},(duration *19) + delayTime);
+
+
+	
+	
+		});
+
+		$('#pause').click(function() {
+		clearTimeout(timeout1);
+clearTimeout(timeout2);
+clearTimeout(timeout3);
+clearTimeout(timeout4);
+clearTimeout(timeout5);
+clearTimeout(timeout6);
+clearTimeout(timeout7);
+clearTimeout(timeout8);
+clearTimeout(timeout9);
+clearTimeout(timeout10);
+clearTimeout(timeout11);
+clearTimeout(timeout12);
+clearTimeout(timeout13);
+clearTimeout(timeout14);
+clearTimeout(timeout15);
+clearTimeout(timeout16);
+clearTimeout(timeout17);
+clearTimeout(timeout18);
+clearTimeout(timeout19);
+});
+
+	
 // TRY TO KEEP ALL TOUR SPECIFIC CODE BELOW THIS LINE	
 var stageBlurb = [];
  $("#stageTitle").html(stageData2013.course[0] + " - " + stageData2013.distance[0]);
@@ -192,7 +252,7 @@ var stageBlurb = [];
 
 		
 // on change in stage
-		$(".btn").click(function() {
+		$(".stg").click(function() {
 	
 var stageN = this.id;
 
@@ -482,11 +542,11 @@ this.TimeBackZ = this.TimeBack21;
   
 }
 
-
+//code to update graphic after button click
 		svg.selectAll("circle")
 			   .data(data)
 			    .transition()
-			    .duration(2000)
+			    .duration(duration)
  .attr("cx", function(d) {
 			   		return xScale(d.PositionZ);})
 			   .attr("cy", function(d) {
