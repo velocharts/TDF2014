@@ -246,7 +246,7 @@ clearTimeout(timeout19);
 
 	
 // TRY TO KEEP ALL TOUR SPECIFIC CODE BELOW THIS LINE	
-var stageBlurb = [];
+
  $("#stageTitle").html(stageData2013.course[0] + " - " + stageData2013.distance[0]);
   $("#stageText").html(stageBlurb[0]);
 
@@ -293,7 +293,7 @@ this.TimeBackZ = this.TimeBack2;
 	case "stageButton3"  : 
 	 //document.getElementById("imgClickAndChange").src = "imagess/PROFIL3.png";
     $("#stageTitle").html(stageData2013.course[2] + " - " + stageData2013.distance[2]);
-
+  $("#stageText").html(stageBlurb[2])
 	 
  $(".btn").removeClass("active focus");
 	$("#stageButton3").addClass("active focus");
@@ -307,7 +307,7 @@ this.TimeBackZ = this.TimeBack3;
 	case "stageButton4"  : 
 	 //document.getElementById("imgClickAndChange").src = "images/PROFIL4.png";
 	     $("#stageTitle").html(stageData2013.course[3] + " - " + stageData2013.distance[3]);
-
+  $("#stageText").html(stageBlurb[3])
 		$(".btn").removeClass("active focus");
 	$("#stageButton4").addClass("active focus");
 		 $.each(data,function(d) {
@@ -319,7 +319,7 @@ this.TimeBackZ = this.TimeBack4;
   case "stageButton5"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL5.png";
       $("#stageTitle").html(stageData2013.course[4] + " - " + stageData2013.distance[4]);
-
+  $("#stageText").html(stageBlurb[4])
 	$(".btn").removeClass("active focus");
 	$("#stageButton5").addClass("active focus");
 		 $.each(data,function(d) {
@@ -331,7 +331,7 @@ this.TimeBackZ = this.TimeBack5;
 	case "stageButton6"  : 
 	 //document.getElementById("imgClickAndChange").src = "images/PROFIL6.png";
      $("#stageTitle").html(stageData2013.course[5] + " - " + stageData2013.distance[5]);
-	
+	  $("#stageText").html(stageBlurb[5])
  	$(".btn").removeClass("active focus");
 	$("#stageButton6").addClass("active focus");
  		 $.each(data,function(d) {
@@ -343,7 +343,7 @@ this.TimeBackZ = this.TimeBack6;
   case "stageButton7"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL7.png";
    	     $("#stageTitle").html(stageData2013.course[6] + " - " + stageData2013.distance[6]);
-
+  $("#stageText").html(stageBlurb[6])
 	$(".btn").removeClass("active focus");
 	$("#stageButton7").addClass("active focus");
   		 $.each(data,function(d) {
@@ -355,7 +355,7 @@ this.TimeBackZ = this.TimeBack7;
   case "stageButton8"  : 
 //   document.getElementById("imgClickAndChange").src = "images/PROFIL8.png";
 	     $("#stageTitle").html(stageData2013.course[7] + " - " + stageData2013.distance[7]);
-
+  $("#stageText").html(stageBlurb[7])
 	$(".btn").removeClass("active focus");
 	$("#stageButton8").addClass("active focus");
 		 $.each(data,function(d) {
@@ -367,7 +367,7 @@ this.TimeBackZ = this.TimeBack8;
   case "stageButton9"  : 
   // document.getElementById("imgClickAndChange").src = "images/PROFIL9.png";
   	     $("#stageTitle").html(stageData2013.course[8] + " - " + stageData2013.distance[8]);
-
+  $("#stageText").html(stageBlurb[8])
 	$(".btn").removeClass("active focus");
 	$("#stageButton9").addClass("active focus");
   		 $.each(data,function(d) {
@@ -379,7 +379,7 @@ this.TimeBackZ = this.TimeBack9;
   case "stageButton10"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL10.png";
    	     $("#stageTitle").html(stageData2013.course[9] + " - " + stageData2013.distance[9]);
-
+  $("#stageText").html(stageBlurb[9])
 	$(".btn").removeClass("active focus");
 	$("#stageButton10").addClass("active focus");
    		 $.each(data,function(d) {
@@ -392,7 +392,7 @@ this.TimeBackZ = this.TimeBack10;
   case "stageButton11"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL11.png";
    	    $("#stageTitle").html(stageData2013.course[10] + " - " + stageData2013.distance[10]);
-
+  $("#stageText").html(stageBlurb[10])
 	$(".btn").removeClass("active focus");
 	$("#stageButton11").addClass("active focus");
 $.each(data,function(d) {
@@ -406,7 +406,7 @@ this.TimeBackZ = this.TimeBack11;
    case "stageButton12"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL12.png";
    	    $("#stageTitle").html(stageData2013.course[11] + " - " + stageData2013.distance[11]);
-
+  $("#stageText").html(stageBlurb[11])
 	$(".btn").removeClass("active focus");
 	$("#stageButton12").addClass("active focus");
  		 $.each(data,function(d) {
@@ -420,7 +420,7 @@ this.TimeBackZ = this.TimeBack12;
    case "stageButton13"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL13.png";
    	     $("#stageTitle").html(stageData2013.course[12] + " - " + stageData2013.distance[12]);
-
+  $("#stageText").html(stageBlurb[12])
 	$(".btn").removeClass("active focus");
 	$("#stageButton13").addClass("active focus");
    		 $.each(data,function(d) {
@@ -433,7 +433,7 @@ this.TimeBackZ = this.TimeBack13;
    case "stageButton14"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL14.png";
    	     $("#stageTitle").html(stageData2013.course[13] + " - " + stageData2013.distance[13]);
-
+  $("#stageText").html(stageBlurb[13])
 	$(".btn").removeClass("active focus");
 	$("#stageButton14").addClass("active focus");
   		 $.each(data,function(d) {
@@ -446,7 +446,7 @@ this.TimeBackZ = this.TimeBack14;
      case "stageButton15"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL15.png";
    	     $("#stageTitle").html(stageData2013.course[14] + " - " + stageData2013.distance[14]);
-
+  $("#stageText").html(stageBlurb[14])
 	 $(".btn").removeClass("active focus");
 	$("#stageButton15").addClass("active focus");
  		 $.each(data,function(d) {
@@ -459,7 +459,7 @@ this.TimeBackZ = this.TimeBack15;
    case "stageButton16"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL16.png";
    	     $("#stageTitle").html(stageData2013.course[15] + " - " + stageData2013.distance[15]);
-
+  $("#stageText").html(stageBlurb[15])
 	$(".btn").removeClass("active focus");
 	$("#stageButton16").addClass("active focus");
   		 $.each(data,function(d) {
@@ -473,7 +473,7 @@ this.TimeBackZ = this.TimeBack16;
    case "stageButton17"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL17.png";
    	     $("#stageTitle").html(stageData2013.course[16] + " - " + stageData2013.distance[16]);
-
+  $("#stageText").html(stageBlurb[16])
 	$(".btn").removeClass("active focus");
 	$("#stageButton17").addClass("active focus");
   		 $.each(data,function(d) {
@@ -487,7 +487,7 @@ this.TimeBackZ = this.TimeBack17;
     case "stageButton18"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL18.png";
    	     $("#stageTitle").html(stageData2013.course[17] + " - " + stageData2013.distance[17]);
-
+  $("#stageText").html(stageBlurb[17])
 	$(".btn").removeClass("active focus");
 	$("#stageButton18").addClass("active focus");
  		 $.each(data,function(d) {
@@ -501,7 +501,7 @@ this.TimeBackZ = this.TimeBack18;
   case "stageButton19"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL19.png";
    	     $("#stageTitle").html(stageData2013.course[18] + " - " + stageData2013.distance[18]);
-
+  $("#stageText").html(stageBlurb[18])
 	$(".btn").removeClass("active focus");
 	$("#stageButton19").addClass("active focus");
 		 $.each(data,function(d) {
@@ -515,7 +515,7 @@ this.TimeBackZ = this.TimeBack19;
   case "stageButton20"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL20.png";
    	     $("#stageTitle").html(stageData2013.course[19] + " - " + stageData2013.distance[19]);
-
+  $("#stageText").html(stageBlurb[19])
 	$(".btn").removeClass("active focus");
 	$("#stageButton20").addClass("active focus");
  		 $.each(data,function(d) {
@@ -529,7 +529,7 @@ this.TimeBackZ = this.TimeBack20;
   case "stageButton21"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL21.png";
    	     $("#stageTitle").html(stageData2013.course[20] + " - " + stageData2013.distance[20]);
-
+  $("#stageText").html(stageBlurb[20])
 	$(".btn").removeClass("active focus");
 	$("#stageButton21").addClass("active focus");
    		 $.each(data,function(d) {
