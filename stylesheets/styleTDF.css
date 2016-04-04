@@ -7,11 +7,11 @@ background-color:rgb(240,240,240);
 padding-top:20px!important;
 padding-bottom:20px!important;
 }
-#stageButton20{
+.mountains{
 
 width: 40px;
-background: url('../images/Mountain-Icon.gif');
-background-size: 40px 40px;
+background: url('../images/Mountain-Icon.gif')!important;
+background-size: 40px 40px!important;
 }
 
  #header {
