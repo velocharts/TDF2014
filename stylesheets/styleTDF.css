@@ -48,3 +48,15 @@ background-size: 40px 40px!important;
    font-family: Helvetica, Arial, Sans-Serif;
    color: rgb(80,80,80);
    }
+   
+   
+.annotations path{
+  fill: none;
+  stroke: black;
+}
+.annotations g:hover circle{
+  stroke: red;
+}
+.annotations g:hover text{
+  fill: red;
+}

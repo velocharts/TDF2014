@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
 	var circle
 	var data
 
@@ -20,6 +20,41 @@ var riderlist = ["FROOME Christopher","QUINTANA ROJAS Nairo Alexander","RODRIGUE
 var dropdown = document.getElementById("myListR");
 for (var i = 0; i < riderlist.length; ++i) { dropdown[dropdown.length] = new Option(riderlist[i], riderlist[i]);};
 var riderS=myListR.options[myListR.selectedIndex].text;
+
+var annotations = [
+  {
+    "xVal": 20,
+    "yVal": 40,
+    "path": "M197,95C130,119,104,46,100,16",
+    "text": "Quintana",
+    "textOffset": [
+      213,
+      99
+    ]
+  },
+  {
+    "xVal": 20,
+    "yVal": 40,
+    "path": "M60,156C56,129,83,90,78,12",
+    "text": "Froome & Contador",
+    "textOffset": [
+      33,
+      183
+    ]
+  },
+  {
+    "xVal": 20,
+    "yVal": 40,
+	"path": "M60,156C56,129,83,90,78,12",
+    "text": "A sprint on stage one sees the favourites finish safely in the bunch. ",
+    "textOffset": [
+      44,
+      190
+    ]
+  }
+  
+  
+]
 
 
 
@@ -183,6 +218,27 @@ var teamS=mylist.options[mylist.selectedIndex].text
 			  else {  return 5 }
 			  })
 				});
+				
+				
+				var swoopy = d3.swoopyDrag()
+    .x(function(d){ return xScale(d.xVal) })
+    .y(function(d){ return yScale(d.yVal) })
+    .draggable(true)
+    .annotations(annotations)
+	
+	 var swoopySel = svg.append('g').attr("class", "annotations").call(swoopy)
+	 
+	 svg.append('marker')
+    .attr('id', 'arrow')
+    .attr('viewBox', '-10 -10 20 20')
+    .attr('markerWidth', 20)
+    .attr('markerHeight', 20)
+    .attr('orient', 'auto')
+  .append('path')
+    .attr('d', 'M-6.75,-6.75 L 0,0 L -6.75,6.75')
+	
+	swoopySel.selectAll('path').attr('marker-end', 'url(#arrow)')
+	
 var timeout1 = [];
 				var timeout2 = [];var timeout3 = [];var timeout4 = [];var timeout5 = [];
 				var timeout6 = [];var timeout7 = [];var timeout8 = [];var timeout9 = [];
@@ -288,7 +344,22 @@ $("#stageText").html(stageBlurb[1]);
     this.PositionZ = this.Position2;
 	this.SecBackZ = this.SecBack2;
 this.TimeBackZ = this.TimeBack2;
+
 	});
+	
+	var annotationsUpdate = [
+  {
+    "xVal": 20,
+    "yVal": 40,
+    "path": "M452,144C450,101,656,158,647,69",
+    "text": "Geraint Thomas battles on with a broken pelvis",
+    "textOffset": [
+      412,
+      177
+    ]
+  }
+]
+
 	
 	break;
 	case "stageButton3"  : 
@@ -563,6 +634,28 @@ this.TimeBackZ = this.TimeBack21;
 }
 
 //code to update graphic after button click
+
+console.log(annotationsUpdate)
+//svg.call(swoopy)
+
+svg.selectAll('.annotations').remove()
+var swoopyUpdate = d3.swoopyDrag()
+    .x(function(d){ return xScale(d.xVal) })
+    .y(function(d){ return yScale(d.yVal) })
+    .draggable(true)
+    .annotations(annotationsUpdate)
+
+	var swoopySel = svg.append('g').attr("class", "annotations").call(swoopyUpdate)
+	svg.append('marker')
+    .attr('id', 'arrow')
+    .attr('viewBox', '-10 -10 20 20')
+    .attr('markerWidth', 20)
+    .attr('markerHeight', 20)
+    .attr('orient', 'auto')
+  .append('path')
+    .attr('d', 'M-6.75,-6.75 L 0,0 L -6.75,6.75')
+	
+	swoopySel.selectAll('path').attr('marker-end', 'url(#arrow)')
 		svg.selectAll("circle")
 			   .data(data)
 			    .transition()
@@ -574,7 +667,10 @@ this.TimeBackZ = this.TimeBack21;
 
 					tips.text(function(d) {
 				return d.Name + " | Position: " + d.PositionZ + " | " + d.Team + " | Overall Time:" + d.TimeBackZ;});
-					/*
+		
+
+
+		/*
 	//set colour
 			  .attr("fill", function(d) {
 			  if (d.Team == teamS) { return "rgb(0,121,193)" }
@@ -591,4 +687,4 @@ this.TimeBackZ = this.TimeBack21;
 		
 				
 				
-});
+
