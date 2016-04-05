@@ -1,7 +1,7 @@
 
 	var circle
 	var data
-
+var annotationsUpdate
 
 	//Width and height of SVG
 		 	var data
@@ -40,16 +40,6 @@ var annotations = [
     "textOffset": [
       33,
       183
-    ]
-  },
-  {
-    "xVal": 20,
-    "yVal": 40,
-	"path": "M60,156C56,129,83,90,78,12",
-    "text": "A sprint on stage one sees the favourites finish safely in the bunch. ",
-    "textOffset": [
-      44,
-      190
     ]
   }
   
@@ -239,6 +229,15 @@ var teamS=mylist.options[mylist.selectedIndex].text
 	
 	swoopySel.selectAll('path').attr('marker-end', 'url(#arrow)')
 	
+	svg.append("text")
+    .attr("class", "annotations")
+    .attr("text-anchor", "end")
+	.attr("font-family", "sans-serif")
+	.attr("fill", "rgb(90,90,90)")
+    .attr("y", 300)
+	.attr("x", 600)
+    .text("An opening sprint stage sees the favourites finish safely in the bunch");
+	
 var timeout1 = [];
 				var timeout2 = [];var timeout3 = [];var timeout4 = [];var timeout5 = [];
 				var timeout6 = [];var timeout7 = [];var timeout8 = [];var timeout9 = [];
@@ -347,15 +346,15 @@ this.TimeBackZ = this.TimeBack2;
 
 	});
 	
-	var annotationsUpdate = [
+	 annotationsUpdate = [
   {
     "xVal": 20,
     "yVal": 40,
     "path": "M452,144C450,101,656,158,647,69",
-    "text": "Geraint Thomas battles on with a broken pelvis",
+    "text": "Geraint Thomas battles on with what he later discovers is a broken pelvis",
     "textOffset": [
-      412,
-      177
+      376,
+      172
     ]
   }
 ]
@@ -367,7 +366,7 @@ this.TimeBackZ = this.TimeBack2;
     $("#stageTitle").html(stageData2013.course[2] + " - " + stageData2013.distance[2]);
   $("#stageText").html(stageBlurb[2])
   $("#stageWinner").html(stageData2013.winner[2]);
-	 
+	 annotationsUpdate = [];
  $(".btn").removeClass("active focus");
 	$("#stageButton3").addClass("active focus");
 		 $.each(data,function(d) {
@@ -381,6 +380,18 @@ this.TimeBackZ = this.TimeBack3;
 	 //document.getElementById("imgClickAndChange").src = "images/PROFIL4.png";
 	     $("#stageTitle").html(stageData2013.course[3] + " - " + stageData2013.distance[3]);
   $("#stageText").html(stageBlurb[3]);
+  annotationsUpdate = [
+  {
+    "xVal": 20,
+    "yVal": 40,
+    "path": "M523,202C666,186,759,199,640,-30",
+    "text": "Ted King, who was nursing a shoulder injury, was controversially eliminated from the tour after finishing seven seconds outside the cutoff time. ",
+    "textOffset": [
+      394,
+      171
+    ]
+  }
+]
   $("#stageWinner").html(stageData2013.winner[3]);
 		$(".btn").removeClass("active focus");
 	$("#stageButton4").addClass("active focus");
@@ -395,6 +406,18 @@ this.TimeBackZ = this.TimeBack4;
       $("#stageTitle").html(stageData2013.course[4] + " - " + stageData2013.distance[4]);
   $("#stageText").html(stageBlurb[4]);
   $("#stageWinner").html(stageData2013.winner[4]);
+   annotationsUpdate = [
+  {
+    "xVal": 20,
+    "yVal": 40,
+    "path": "M297,177C456,176,459,140,459,101",
+    "text": "Mark Cavendish wins his 24th Tour de France stage",
+    "textOffset": [
+      114,
+      173
+    ]
+  }
+]
 	$(".btn").removeClass("active focus");
 	$("#stageButton5").addClass("active focus");
 		 $.each(data,function(d) {
@@ -635,17 +658,17 @@ this.TimeBackZ = this.TimeBack21;
 
 //code to update graphic after button click
 
-console.log(annotationsUpdate)
-//svg.call(swoopy)
+
 
 svg.selectAll('.annotations').remove()
-var swoopyUpdate = d3.swoopyDrag()
+ swoopyUpdate = d3.swoopyDrag()
     .x(function(d){ return xScale(d.xVal) })
     .y(function(d){ return yScale(d.yVal) })
     .draggable(true)
     .annotations(annotationsUpdate)
 
-	var swoopySel = svg.append('g').attr("class", "annotations").call(swoopyUpdate)
+	 swoopySel = svg.append('g').attr("class", "annotations").call(swoopyUpdate)
+//	console.log(annotationsUpdate);
 	svg.append('marker')
     .attr('id', 'arrow')
     .attr('viewBox', '-10 -10 20 20')
@@ -656,6 +679,13 @@ var swoopyUpdate = d3.swoopyDrag()
     .attr('d', 'M-6.75,-6.75 L 0,0 L -6.75,6.75')
 	
 	swoopySel.selectAll('path').attr('marker-end', 'url(#arrow)')
+	swoopySel.selectAll('text')
+    .each(function(d){
+      d3.select(this)
+          .text('')                        //clear existing text
+          .tspans(d3.wordwrap(d.text, 20)) //wrap after 20 char
+    }) 
+	
 		svg.selectAll("circle")
 			   .data(data)
 			    .transition()
