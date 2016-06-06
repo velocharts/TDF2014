@@ -329,6 +329,32 @@ switch (stageN)
 	this.SecBackZ = this.SecBack1;
 this.TimeBackZ = this.TimeBack1;
 	});
+	
+	 annotationsUpdate = [
+  
+  {
+    "xVal": 20,
+    "yVal": 40,
+    "path": "M197,95C130,119,104,46,100,16",
+    "text": "Quintana",
+    "textOffset": [
+      213,
+      99
+    ]
+  },
+  {
+    "xVal": 20,
+    "yVal": 40,
+    "path": "M60,156C56,129,83,90,78,12",
+    "text": "Froome & Contador",
+    "textOffset": [
+      33,
+      183
+    ]
+  }
+
+]
+	
      break;
 case "stageButton2" : 
      //alert(stageN + " d.Position2");
@@ -437,6 +463,18 @@ this.TimeBackZ = this.TimeBack5;
     this.PositionZ = this.Position6;
 	this.SecBackZ = this.SecBack6;
 this.TimeBackZ = this.TimeBack6;
+ annotationsUpdate = [
+  {
+    "xVal": 20,
+    "yVal": 40,
+    "path": "M18,165C-56,121,-51,63,-68,9",
+    "text": "Daryl Impey takes over the yellow jersey from his team-mate Simon Gerrans",
+    "textOffset": [
+      38,
+      172
+    ]
+  }
+];
 	});
   break;
   case "stageButton7"  : 
@@ -452,6 +490,7 @@ this.TimeBackZ = this.TimeBack6;
 this.TimeBackZ = this.TimeBack7;
 	});
   break;
+  annotationsUpdate = [];
   case "stageButton8"  : 
 //   document.getElementById("imgClickAndChange").src = "images/PROFIL8.png";
 	     $("#stageTitle").html(stageData2013.course[7] + " - " + stageData2013.distance[7]);
@@ -464,6 +503,18 @@ this.TimeBackZ = this.TimeBack7;
 	this.SecBackZ = this.SecBack8;
 this.TimeBackZ = this.TimeBack8;
 	});
+	annotationsUpdate = [
+  {
+    "xVal": 20,
+    "yVal": 40,
+    "path": "M52,172C54,123,-52,72,-49,13",
+    "text": "Froome takes the stage and the yellow jersey, Contador is among those losing time",
+    "textOffset": [
+      -32,
+      204
+    ]
+  }
+];
   break;
   case "stageButton9"  : 
   // document.getElementById("imgClickAndChange").src = "images/PROFIL9.png";
@@ -477,6 +528,7 @@ this.TimeBackZ = this.TimeBack8;
 	this.SecBackZ = this.SecBack9;
 this.TimeBackZ = this.TimeBack9;
 	});
+	annotationsUpdate = [];
   break;
   case "stageButton10"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL10.png";
@@ -490,7 +542,7 @@ this.TimeBackZ = this.TimeBack9;
 	this.SecBackZ = this.SecBack10;
 this.TimeBackZ = this.TimeBack10;
 	});
-
+annotationsUpdate = [];
   break;
   case "stageButton11"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL11.png";
@@ -504,7 +556,7 @@ this.PositionZ = this.Position11;
 this.SecBackZ = this.SecBack11;
 this.TimeBackZ = this.TimeBack11;
 	});
-
+annotationsUpdate = [];
   break;
   
    case "stageButton12"  : 
@@ -519,7 +571,7 @@ this.TimeBackZ = this.TimeBack11;
 	this.SecBackZ = this.SecBack12;
 this.TimeBackZ = this.TimeBack12;
 	});
-
+annotationsUpdate = [];
   break;
  
    case "stageButton13"  : 
@@ -534,7 +586,7 @@ this.TimeBackZ = this.TimeBack12;
 	this.SecBackZ = this.SecBack13;
 this.TimeBackZ = this.TimeBack13;
 	});
-
+annotationsUpdate = [];
   break;
    case "stageButton14"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL14.png";
@@ -548,7 +600,7 @@ this.TimeBackZ = this.TimeBack13;
 	this.SecBackZ = this.SecBack14;
 this.TimeBackZ = this.TimeBack14;
 	});
-
+annotationsUpdate = [];
   break;
      case "stageButton15"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL15.png";
@@ -562,7 +614,7 @@ this.TimeBackZ = this.TimeBack14;
 	this.SecBackZ = this.SecBack15;
 this.TimeBackZ = this.TimeBack15;
 	});
-
+annotationsUpdate = [];
   break;
    case "stageButton16"  : 
    //document.getElementById("imgClickAndChange").src = "images/PROFIL16.png";
@@ -576,7 +628,7 @@ this.TimeBackZ = this.TimeBack15;
 	this.SecBackZ = this.SecBack16;
 this.TimeBackZ = this.TimeBack16;
 	});
-
+annotationsUpdate = [];
   break;
   
    case "stageButton17"  : 
@@ -591,7 +643,7 @@ this.TimeBackZ = this.TimeBack16;
 	this.SecBackZ = this.SecBack17;
 this.TimeBackZ = this.TimeBack17;
 	});
-
+annotationsUpdate = [];
   break;
   
     case "stageButton18"  : 
@@ -606,7 +658,7 @@ this.TimeBackZ = this.TimeBack17;
 	this.SecBackZ = this.SecBack18;
 this.TimeBackZ = this.TimeBack18;
 	});
-
+annotationsUpdate = [];
   break;
   
   case "stageButton19"  : 
@@ -621,7 +673,7 @@ this.TimeBackZ = this.TimeBack18;
 	this.SecBackZ = this.SecBack19;
 this.TimeBackZ = this.TimeBack19;
 	});
-
+annotationsUpdate = [];
   break;
   
   case "stageButton20"  : 
@@ -636,7 +688,7 @@ this.TimeBackZ = this.TimeBack19;
 	this.SecBackZ = this.SecBack20;
 this.TimeBackZ = this.TimeBack20;
 	});
-
+annotationsUpdate = [];
   break;
   
   case "stageButton21"  : 
@@ -651,7 +703,7 @@ this.TimeBackZ = this.TimeBack20;
 	this.SecBackZ = this.SecBack21;
 this.TimeBackZ = this.TimeBack21;
 	});
-
+annotationsUpdate = [];
   break;
   
 }
